@@ -30,7 +30,7 @@ body {
 header {
   color: #fff;
   padding: 1rem;
-  background-image: url("/public/assets/julio-bernal-WLGx0fKFSeI-unsplash.jpg");
+  background-image: url('/assets/julio-bernal-WLGx0fKFSeI-unsplash.jpg');
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
@@ -141,7 +141,8 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
