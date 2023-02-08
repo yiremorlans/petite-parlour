@@ -44,6 +44,10 @@ const serviceRequestSchema = new mongoose.Schema({
 
 const ServiceRequest = mongoose.model("ServiceRequest", serviceRequestSchema);
 
+app.get("/", async (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
 app.post("/servicerequest", async (req, res) => {
   let testAccount = await nodemailer.createTestAccount();
   const transporter = nodemailer.createTransport({
