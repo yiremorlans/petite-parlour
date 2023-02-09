@@ -1,11 +1,16 @@
 {
   "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^10.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-react-views": "^0.11.0",
     "mongoose": "^6.10.0",
     "nodemailer": "^6.9.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "scripts": {
     "start": "node server.js"
