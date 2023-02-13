@@ -1,0 +1,123 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a default font size for the document */
+html {
+  font-size: 16px;
+}
+
+/* Use rem units for font sizes */
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+
+/* Add responsive design rules */
+@media only screen and (min-width: 768px) {
+  /* Increase font size for larger screens */
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Style the header and navigation */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style the main content area */
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.service img {
+  max-width: 100%;
+  height: auto;
+}
+
+.service h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.service p {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* Style the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}

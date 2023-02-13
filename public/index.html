@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petite Pawlour - Professional Exotic & Small Animal Grooming</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Petite Pawlour</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Our Services</h2>
+        <div class="service">
+          <img src="placeholder.jpg" alt="Service 1" />
+          <h3>Full Grooming</h3>
+            <p>We offer a full grooming service for your exotic animal. This includes a bath, haircut, nail trim, and ear cleaning. Your pet will leave feeling clean and refreshed.</p>
+        </div>
+        <div class="service">
+          <img src="placeholder.jpg" alt="Service 2" />
+          <h3>Nail Trim</h3>
+            <p>If your pet is in need of just a nail trim, we offer this service as well. We will trim your pet's nails safely and efficiently.</p>
+        </div>
+        <div class="service">
+          <img src="placeholder.jpg" alt="Service 3" />
+          <h3>Bath and Brush</h3>
+            <p>If your pet is not in need of a haircut, we offer a bath and brush service. This includes a bath, brush, nail trim, and ear cleaning. Your pet will leave looking and feeling great.</p>
+        </div>
+      </section>
+      <section>
+        <h2>Request a Service</h2>
+        <form action="/servicerequest" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required />
+
+          <label for="time">Time</label>
+          <input type="time" id="time" name="time" required />
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes"></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+    <footer>
+        <p>Copyright © 
+        <!-- Display current year using JavaScript -->
+        <script>document.write(new Date().getFullYear());</script>
+        Petite Pawlour. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
