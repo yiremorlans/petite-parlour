@@ -18,7 +18,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Set up route for the homepage
 app.get("/", (req, res) => {
-  console.log("Wecome to the homepage");
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
@@ -45,10 +44,9 @@ const ServiceRequest = mongoose.model("ServiceRequest", serviceRequestSchema);
 
 app.post("/servicerequest", async (req, res) => {
   const newServiceRequest = new ServiceRequest(req.body);
-  console.log(newServiceRequest);
   try {
     await newServiceRequest.save();
-    res.status(200).json({ message: "Service request submitted successfully" });
+    res.redirect("/");
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
