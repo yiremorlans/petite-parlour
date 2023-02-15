@@ -5,6 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const path = require("path");
+const nodemailer = require("nodemailer");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -38,17 +39,71 @@ const serviceRequestSchema = new mongoose.Schema({
   date: String,
   time: String,
   notes: String,
+  service: String,
 });
 
 const ServiceRequest = mongoose.model("ServiceRequest", serviceRequestSchema);
 
 app.post("/servicerequest", async (req, res) => {
-  const newServiceRequest = new ServiceRequest(req.body);
+  let testAccount = await nodemailer.createTestAccount();
+  console.log(testAccount.user, testAccount.pass);
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.ethereal.email",
+    port: 587,
+    auth: {
+      user: testAccount.user,
+      pass: testAccount.pass,
+    },
+  });
+
+  // Create a new service request object with the form data
+  const serviceRequest = new ServiceRequest({
+    name: req.body.name,
+    phone: req.body.phone,
+    email: req.body.email,
+    service: req.body.service,
+    date: req.body.date,
+    time: req.body.time,
+    notes: req.body.notes,
+  });
+
+  // Save the service request to the database
   try {
-    await newServiceRequest.save();
+    await serviceRequest.save();
+
+    // Send an email response to the user with their form details
+    const mailOptions = {
+      from: testAccount.user,
+      to: req.body.email,
+      subject: "Service Request Submitted",
+      html: `
+        <p>Thank you for submitting a service request!</p>
+        <p>Here are the details you submitted:</p>
+        <ul>
+          <li>Name: ${req.body.name}</li>
+          <li>Phone: ${req.body.phone}</li>
+          <li>Email: ${req.body.email}</li>
+          <li>Service: ${req.body.service}</li>
+          <li>Date: ${req.body.date}</li>
+          <li>Time: ${req.body.time}</li>
+          <li>Notes: ${req.body.notes}</li>
+        </ul>
+      `,
+    };
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
+    });
+
+    // Render the index page with a success message
     res.redirect("/");
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    console.log(err);
+    res.errored(err);
   }
 });
 
