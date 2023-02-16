@@ -8,13 +8,14 @@
 /* Set a default font size for the document */
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 /* Use rem units for font sizes */
 body {
   font-size: 1rem;
   line-height: 1.5;
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 /* Add responsive design rules */
@@ -27,9 +28,47 @@ body {
 
 /* Style the header and navigation */
 header {
-  background-color: #333;
   color: #fff;
   padding: 1rem;
+  background-image: url("/public/assets/julio-bernal-WLGx0fKFSeI-unsplash.jpg");
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.hero {
+  display: flex;
+  margin-top: calc(50vh / 4);
+  font-size: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Skranji", cursive;
+  letter-spacing: 0.2rem;
+}
+
+.fa-paw {
+  font-size: 3.5rem;
+}
+
+.booking {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 50vh;
+  align-items: end;
+}
+
+.booking a {
+  width: fit-content;
+  padding: 1rem;
+  font-variant: small-caps;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
 }
 
 nav {
@@ -40,11 +79,17 @@ nav {
 
 nav ul {
   display: flex;
+  margin: auto;
   list-style: none;
 }
 
 nav li {
+  font-variant: small-caps;
   margin-left: 1rem;
+}
+
+nav li:first-child {
+  margin-left: 0rem;
 }
 
 nav a {
