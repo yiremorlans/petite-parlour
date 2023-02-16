@@ -3,20 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Petite Pawlour - Professional Exotic & Small Animal Grooming</title>
+    <title>Petite Pawlour - Professional Pet Grooming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Skranji&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <h1>Welcome to Petite Pawlour</h1>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
           <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
+      <div class="hero">
+        <i class="fa-solid fa-paw"></i>
+        <h1>The Petite Pawlour</h1>
+        <span>Pet Grooming Salon</span>
+        <span>Tallahassee, Florida</span>
+      </div>
+      <div class="booking">
+        <a href="#">Join Email List</a>
+        <a href="#">Book Appointment</a>
+      </div>
     </header>
     <main>
       <section>
@@ -24,7 +37,7 @@
         <div class="service">
           <img src="placeholder.jpg" alt="Service 1" />
           <h3>Full Grooming</h3>
-            <p>We offer a full grooming service for your exotic animal. This includes a bath, haircut, nail trim, and ear cleaning. Your pet will leave feeling clean and refreshed.</p>
+            <p>We offer a full grooming service for your pet. This includes a bath, haircut, nail trim, and ear cleaning. Your pet will leave feeling clean and refreshed.</p>
         </div>
         <div class="service">
           <img src="placeholder.jpg" alt="Service 2" />
@@ -34,7 +47,7 @@
         <div class="service">
           <img src="placeholder.jpg" alt="Service 3" />
           <h3>Bath and Brush</h3>
-            <p>If your pet is not in need of a haircut, we offer a bath and brush service. This includes a bath, brush, nail trim, and ear cleaning. Your pet will leave looking and feeling great.</p>
+            <p>If your pet is not in need of a haircut, we offer a bath and brush service. This includes a bath, brush, and ear cleaning. Your pet will leave looking and feeling great.</p>
         </div>
       </section>
       <section>
@@ -52,10 +65,9 @@
           <input type="time" id="time-input" name="time" min="08:00" max="17:00" required>
           <label for="service-select">Choose a service:</label>
           <select id="service-select" name="service">
-            <option value="Grooming">Grooming</option>
-            <option value="Bathing">Bathing</option>
+            <option value="Grooming">Full Grooming</option>
+            <option value="Bathing">Bath & brush</option>
             <option value="Nail trimming">Nail trimming</option>
-            <option value="Teeth cleaning">Teeth cleaning</option>
           </select>
           <label for="notes-input">Notes:</label>
           <textarea id="notes-input" name="notes"></textarea>
