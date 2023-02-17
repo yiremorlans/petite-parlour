@@ -46,8 +46,6 @@ const ServiceRequest = mongoose.model("ServiceRequest", serviceRequestSchema);
 
 app.post("/servicerequest", async (req, res) => {
   let testAccount = await nodemailer.createTestAccount();
-  console.log(testAccount.user, testAccount.pass);
-
   const transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
