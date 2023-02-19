@@ -29,29 +29,29 @@
       </div>
       <div class="booking">
         <a href="#">Join Email List</a>
-        <a href="#">Book Appointment</a>
+        <a href="#appointment">Book Appointment</a>
       </div>
     </header>
     <main>
       <section>
         <h2>Our Services</h2>
         <div class="service">
-          <img src="placeholder.jpg" alt="Service 1" />
+          <i class="fa-solid fa-scissors"></i>
           <h3>Full Grooming</h3>
             <p>We offer a full grooming service for your pet. This includes a bath, haircut, nail trim, and ear cleaning. Your pet will leave feeling clean and refreshed.</p>
         </div>
         <div class="service">
-          <img src="placeholder.jpg" alt="Service 2" />
+          <i class="fa-solid fa-paw"></i>          
           <h3>Nail Trim</h3>
             <p>If your pet is in need of just a nail trim, we offer this service as well. We will trim your pet's nails safely and efficiently.</p>
         </div>
         <div class="service">
-          <img src="placeholder.jpg" alt="Service 3" />
+          <i class="fa-solid fa-shower"></i>
           <h3>Bath and Brush</h3>
             <p>If your pet is not in need of a haircut, we offer a bath and brush service. This includes a bath, brush, and ear cleaning. Your pet will leave looking and feeling great.</p>
         </div>
       </section>
-      <section>
+      <section id="appointment">
         <h2>Request a Service</h2>
         <form action="/servicerequest" method="post">
           <label for="name-input">Name:</label>
@@ -61,7 +61,7 @@
           <label for="email-input">Email:</label>
           <input type="email" id="email-input" name="email" required>
           <label for="date-input">Date:</label>
-          <input type="date" id="date-input" name="date" required>
+          <input type="date" id="date-input" min="" name="date" required>
           <label for="time-input">Time:</label>
           <input type="time" id="time-input" name="time" min="08:00" max="17:00" required>
           <label for="service-select">Choose a service:</label>
@@ -81,6 +81,16 @@
         <!-- Display current year using JavaScript -->
         <script>document.write(new Date().getFullYear());</script>
         Petite Pawlour. All Rights Reserved.</p>
+        <script>
+          const datePicker = document.querySelector('#date-input');
+          datePicker.min = new Date().toISOString().split('T')[0];
+          datePicker.addEventListener('change', () => {
+            if (new Date(datePicker.value) < new Date()) {
+              alert('Please select a date in the future.');
+              datePicker.value = '';
+            }
+          })
+        </script>
     </footer>
   </body>
 </html>
