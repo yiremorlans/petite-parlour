@@ -36,7 +36,9 @@ function Admin(props) {
               ))}
             </tbody>
           </table>
+          <a href="/">Home</a>
         </div>
+        
      </body>
     </>
   );
