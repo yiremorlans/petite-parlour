@@ -50,7 +50,7 @@ header {
   letter-spacing: 0.2rem;
 }
 
-.fa-paw {
+.hero > .fa-paw {
   font-size: 3.5rem;
 }
 
@@ -103,7 +103,14 @@ main {
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+section > h2 {
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 2.8rem;
+  margin-bottom: 1.8rem;
 }
 
 .service {
@@ -111,11 +118,12 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 2rem 4rem;
 }
 
-.service img {
-  max-width: 100%;
-  height: auto;
+.service > .fa-solid {
+  margin-top: 2rem;
+  font-size: 3.5rem;
 }
 
 .service h3 {
@@ -131,6 +139,7 @@ section {
 form {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 2rem;
 }
 
 label {
@@ -169,13 +178,24 @@ footer {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 100vw;
   margin: 0 auto;
   padding: 20px;
 }
+.container a, button {
+  display: block;
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e0a13d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 h1 {
-  font-size: 36px;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -188,12 +208,12 @@ table {
 
 th,
 td {
-  padding: 10px;
+  padding: 20px;
   text-align: left;
 }
 
 th {
-  background-color: #4d4d4d;
+  background-color: #e0a13d;
   color: #ffffff;
 }
 
@@ -207,10 +227,10 @@ tr:hover {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 24px;
+    font-size: 2.4rem;
   }
 
   table {
-    font-size: 14px;
+    font-size: 1.2rem;
   }
 }
