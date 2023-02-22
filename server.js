@@ -28,12 +28,7 @@ app.get("/", (req, res) => {
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      //   useNewUrlParser: true,
-      //   useUnifiedTopology: true,
-      //   useFindAndModify: false,
-      // useCreateIndex: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {});
 
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
@@ -43,15 +38,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-// const uri = process.env.MONGODB_URI;
-// mongoose.connect(uri, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("MongoDB database connection established successfully");
-// });
 
 const serviceRequestSchema = new mongoose.Schema({
   name: String,
